@@ -57,9 +57,10 @@ header > .information {
   font-size: 28px;
   font-family: "UTM Bustamalaka";
   font-weight: 600;
-  color: #537892;
+  color: #a1cbea;
 }
 /* Sticky */
+
 header.sticky {
   position: fixed;
   top: 0;
@@ -74,7 +75,7 @@ header.sticky .informationlogo img {
   transition: all 0.3s ease;
 }
 header.sticky .informationname1 {
-  font-size: 22px;
+  font-size: 27px;
   transition: all 0.3s ease;
 }
 header.sticky > .information {
@@ -101,15 +102,6 @@ nav#navigation {
   align-items: center;
   flex: 5;
   width: 100%;
-}
-.sticky {
-  position: fixed;
-  width: 100%;
-  text-align: left;
-  z-index: 100000;
-  top: 0;
-  background-color: rgba(155, 89, 182, 0.5);
-  backdrop-filter: blur(4px);
 }
 .main-menu {
   width: 100%;
@@ -170,3 +162,62 @@ body {
 }
 
 /* Footer */
+footer {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../img/imgfooter.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 50px 80px 30px;
+  margin-top: auto;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+footer div p:first-child {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: rgb(215, 223, 105);
+  font-family: "UTM Bustamalaka", "Playfair Display", serif;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+footer div p:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: rgb(215, 223, 105);
+}
+footer a {
+  display: block;
+  color: aliceblue;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+footer a:hover {
+  color: rgb(215, 223, 105);
+  transform: translateX(5px);
+}
+.ftcontact p {
+  color: aliceblue;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.ftcontact p:first-child {
+  color: rgb(215, 223, 105);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
