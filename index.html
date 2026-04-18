@@ -51,36 +51,16 @@
             <button class="slidenext">❯</button>
             <!-- Slide img -->
             <ul class="slideimage">
-                <li class="slide current">
-                    <img src="img/slide1.jpg" alt="slide1">
-                </li>
-                <li class="slide">
-                    <img src="img/slide2.jpg" alt="slide2">
-                </li>
-                <li class="slide">
-                    <img src="img/slide3.jpg" alt="slide3">
-                </li>
-                <li class="slide">
-                    <img src="img/slide4.jpg" alt="slide4">
-                </li>
-                <li class="slide">
-                    <img src="img/slide5.jpg" alt="slide5">
-                </li>
-                <li class="slide">
-                    <img src="img/slide6.jpg" alt="slide6">
-                </li>
-                <li class="slide">
-                    <img src="img/slide7.jpg" alt="slide7">
-                </li>
-                <li class="slide">
-                    <img src="img/slide8.jpg" alt="slide8">
-                </li>
-                <li class="slide">
-                    <img src="img/slide9.jpg" alt="slide9">
-                </li>
-                <li class="slide">
-                    <img src="img/slide10.jpg" alt="slide10">
-                </li>
+                <li class="slide current"><img src="img/slide1.jpg" alt="slide1"></li>
+                <li class="slide"><img src="img/slide2.jpg" alt="slide2"></li>
+                <li class="slide"><img src="img/slide3.jpg" alt="slide3"></li>
+                <li class="slide"><img src="img/slide4.jpg" alt="slide4"></li>
+                <li class="slide"><img src="img/slide5.jpg" alt="slide5"></li>
+                <li class="slide"><img src="img/slide6.jpg" alt="slide6"></li>
+                <li class="slide"><img src="img/slide7.jpg" alt="slide7"></li>
+                <li class="slide"><img src="img/slide8.jpg" alt="slide8"></li>
+                <li class="slide"><img src="img/slide9.jpg" alt="slide9"></li>
+                <li class="slide"><img src="img/slide10.jpg" alt="slide10"></li>
             </ul>
             <!-- Chấm dot -->
             <div class="chuyenslide-dot">
@@ -162,6 +142,49 @@
                 </div>
                 <div class="button3slide buttonvanhoalehoi">
                     <a href="html/vanhoalehoi.html">Khám phá ngay</a>
+                </div>
+            </div>
+        </div>
+        <!-- Form -->
+        <div class="khungform">
+            <div class="hopform">
+                <div class="dauform">
+                    <h2>🏮 Chào mừng đến với Huế! 🏮</h2>
+                    <p>Chia sẻ điều bạn yêu thích nhất để nhận tư vấn chi tiết.</p>
+                </div>
+                <div class="noidungform">
+                    <div class="khungchon">
+                        <h3>📍 Điều bạn yêu thích nhất</h3>
+                        <div class="nhomchon">
+                            <select id="diaDiem">
+                                <option value="" disabled selected>-- Chọn địa điểm --</option>
+                                <option value="Hoàng Thành Huế">🏯 Hoàng Thành Huế</option>
+                                <option value="Chùa Thiên Mụ">🛕 Chùa Thiên Mụ</option>
+                                <option value="Đèo Hải Vân">⛰️ Đèo Hải Vân</option>
+                                <option value="Lăng Tẩm Huế">🏛️ Lăng Tẩm Huế</option>
+                                <option value="Phá Tam Giang">🌊 Phá Tam Giang</option>
+                                <option value="Sông Hương - Núi Ngự">🌅 Sông Hương - Núi Ngự</option>
+                                <option value="Biển Lăng Cô">🏖️ Biển Lăng Cô</option>
+                                <option value="Trường Quốc Học Huế">📚 Trường Quốc Học Huế</option>
+                                <option value="Bún Bò Huế">🍜 Bún Bò Huế</option>
+                                <option value="Bánh Ép Huế">🥞 Bánh Ép Huế</option>
+                                <option value="Bún Hến">🍲 Bún Hến</option>
+                                <option value="Bánh Canh Nam Phổ">🍜 Bánh Canh Nam Phổ</option>
+                                <option value="Các Loại Bánh Huế">🥟 Các Loại Bánh Huế</option>
+                                <option value="Chè Huế">🥣 Chè Huế</option>
+                                <option value="Mè Xửng">🍬 Mè Xửng</option>
+                                <option value="Cà Phê Muối">☕ Cà Phê Muối</option>
+                                <option value="Festival Huế">🎭 Festival Huế</option>
+                                <option value="Vật Làng Sình">🤼 Vật Làng Sình</option>
+                                <option value="Lễ Cầu Ngư">🐋 Lễ Cầu Ngư</option>
+                                <option value="Văn Hóa Áo Dài">👗 Văn Hóa Áo Dài</option>
+                            </select>
+                        </div>
+                        <div class="dachon" id="daChon">
+                            <p class="tbchuachon">✨ Bạn chưa chọn địa điểm nào</p>
+                        </div>
+                        <button class="btngui" id="btnGui">GỬI YÊU CẦU</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,6 +277,32 @@
     });
     document.querySelector('.slideprev').addEventListener('click', () => {
         showSlide(currentSlide - 1);
+    });
+
+    // Form
+    const diaDiemSelect = document.getElementById('diaDiem');
+    const daChonDiv = document.getElementById('daChon');
+
+    diaDiemSelect.addEventListener('change', function () {
+        const tenDiaDiem = this.options[this.selectedIndex]?.text;
+        if (this.value && tenDiaDiem) {
+            daChonDiv.innerHTML = `<p class="hienthi">🏆 Địa điểm yêu thích: ${tenDiaDiem}</p>`;
+        } else {
+            daChonDiv.innerHTML = '<p class="tbchuachon">✨ Bạn chưa chọn địa điểm nào</p>';
+        }
+    });
+
+    document.getElementById('btnGui').addEventListener('click', function () {
+        const option = diaDiemSelect.options[diaDiemSelect.selectedIndex];
+        const diaDiem = option?.value ? option.text : null;
+
+        if (!diaDiem) {
+            alert('Vui lòng chọn địa điểm yêu thích!');
+            diaDiemSelect.focus();
+            return;
+        }
+
+        alert(`✅ Cảm ơn bạn!\n\n🏆 Điều yêu thích của bạn là:\n📍 ${diaDiem}\n\nChúng tôi sẽ liên hệ tư vấn chi tiết!`);
     });
 </script>
 

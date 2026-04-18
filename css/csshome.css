@@ -1,26 +1,61 @@
+main {
+  background: url(../img/bg2.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+}
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
 /* Slide */
+
 .slideprev,
 .slidenext {
   position: absolute;
-  top: 350px;
+  top: 50%;
   transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
   background: rgba(255, 255, 255, 0.2);
-  border: none;
-  outline: none;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   z-index: 9999;
-  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slideprev {
-  left: 1vw;
+  left: 30px;
 }
 .slidenext {
-  left: 98vw;
+  right: 30px;
 }
 .slideprev:hover,
 .slidenext:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgb(215, 223, 105);
+  color: #333;
+  border-color: rgb(215, 223, 105);
+  transform: translateY(-50%) scale(1.1);
+}
+.slideprev:active,
+.slidenext:active {
+  transform: translateY(-50%) scale(0.95);
 }
 .slide {
   position: relative;
@@ -197,4 +232,149 @@
 .button3slide a:active {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Form  */
+.khungform {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.hopform {
+  background: url("../img/slide10.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hopform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+.dauform,
+.noidungform {
+  position: relative;
+  z-index: 1;
+}
+.dauform {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+.dauform h2 {
+  font-family: "UTM Bustamalaka", "Playfair Display", serif;
+  font-size: 42px;
+  color: rgb(215, 223, 105);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.dauform p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.noidungform {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px 60px;
+}
+.khungchon {
+  background: transparent;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 400px;
+}
+.khungchon h3 {
+  font-family: "UTM Bustamalaka", serif;
+  font-size: 24px;
+  color: rgb(215, 223, 105);
+  margin-bottom: 30px;
+  text-align: center;
+}
+.nhomchon {
+  margin-bottom: 30px;
+}
+.nhomchon select {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nhomchon select option {
+  background: #333;
+  color: white;
+}
+.nhomchon select:focus {
+  outline: none;
+  border-bottom-color: rgb(215, 223, 105);
+}
+.dachon {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+.tbchuachon {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.hienthi {
+  font-family: "UTM Bustamalaka", serif;
+  font-size: 22px;
+  color: rgb(215, 223, 105);
+  margin: 0;
+  animation: hieu-ung 0.3s ease;
+}
+@keyframes hieu-ung {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btngui {
+  width: 100%;
+  padding: 14px;
+  background: rgb(215, 223, 105);
+  border: none;
+  border-radius: 40px;
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+.btngui:hover {
+  background: rgb(190, 198, 80);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.btngui:active {
+  transform: translateY(0);
 }
