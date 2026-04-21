@@ -286,7 +286,7 @@
     diaDiemSelect.addEventListener('change', function () {
         const tenDiaDiem = this.options[this.selectedIndex]?.text;
         if (this.value && tenDiaDiem) {
-            daChonDiv.innerHTML = `<p class="hienthi">🏆 Địa điểm yêu thích: ${tenDiaDiem}</p>`;
+            daChonDiv.innerHTML = `<p class="hienthi">🏆 Điểm bạn yêu thích: ${tenDiaDiem}</p>`;
         } else {
             daChonDiv.innerHTML = '<p class="tbchuachon">✨ Bạn chưa chọn địa điểm nào</p>';
         }
@@ -297,7 +297,7 @@
         const diaDiem = option?.value ? option.text : null;
 
         if (!diaDiem) {
-            alert('Vui lòng chọn địa điểm yêu thích!');
+            alert('Vui lòng chọn điểm yêu thích!');
             diaDiemSelect.focus();
             return;
         }
