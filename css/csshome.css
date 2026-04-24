@@ -99,6 +99,139 @@ main::before {
   background: #333;
   border: none;
 }
+/* Phần giới thiệu chung về Huế */
+.gioithieu-chung {
+  margin-top: 30px;
+  position: relative;
+  padding: 80px 0;
+  background: url("../img/bg1.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  z-index: 2;
+}
+.gioithieu-chung::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Phần giới thiệu chung về Huế trên trang chủ */
+.gioithieu-chung {
+  margin-top: 30px;
+  position: relative;
+  padding: 80px 0;
+  background: url("../img/bg1.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  z-index: 2;
+}
+.gioithieu-chung::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+.gioithieu-chung .container {
+  position: relative;
+  z-index: 1;
+}
+.gioithieu-header {
+  margin-bottom: 60px;
+}
+.gioithieu-tieudiep {
+  font-family: "SVN-Segoe Print", "Quicksand", sans-serif;
+  font-size: 20px;
+  color: rgb(215, 223, 105);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.gioithieu-tieude-chinh {
+  font-family: "UTM Bustamalaka", "Playfair Display", serif;
+  font-size: 52px;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.gioithieu-ngan-cach {
+  width: 100px;
+  height: 4px;
+  background: rgb(215, 223, 105);
+  margin: 0 auto 25px auto;
+  border-radius: 2px;
+}
+.gioithieu-mota-ngan {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  color: #f0f0f0;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.gioithieu-diemnhan {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.gioithieu-diemnhan-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(2px);
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(215, 223, 105, 0.3);
+}
+.gioithieu-diemnhan-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgb(215, 223, 105);
+  background: rgba(255, 255, 255, 1);
+}
+.diemnhan-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 20px;
+}
+.gioithieu-diemnhan-item h3 {
+  font-family: "UTM Bustamalaka", serif;
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+.gioithieu-diemnhan-item p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  color: #5a6e7c;
+  line-height: 1.5;
+  margin: 0;
+}
 
 /* Main-content - 3 slider */
 .khampha3slide {
@@ -107,7 +240,6 @@ main::before {
   gap: 30px;
   margin: 50px 0;
 }
-
 .div3slide {
   position: relative;
   width: 100%;
@@ -115,7 +247,6 @@ main::before {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 .div3slide > img {
   width: 100%;
   height: 600px;
@@ -123,11 +254,9 @@ main::before {
   display: block;
   transition: transform 0.5s ease;
 }
-
 .div3slide:hover > img {
   transform: scale(1.05);
 }
-
 .content3slide {
   position: absolute;
   top: 0;
@@ -138,24 +267,40 @@ main::before {
   flex-direction: column;
   justify-content: center;
   padding: 0 50px;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.75) 70%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   transition:
     opacity 0.4s ease,
     visibility 0.4s ease;
 }
-
+.div3slide {
+  position: relative;
+}
+.div3slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  transition: width 0.5s ease;
+  pointer-events: none;
+}
+.div3slide:hover::before {
+  width: 65%;
+}
 .div3slide:hover .content3slide {
   opacity: 1;
   visibility: visible;
 }
-
 .content3slide h2 {
   font-family: "UTM Bustamalaka", "Playfair Display", serif;
   font-size: 42px;
@@ -166,7 +311,6 @@ main::before {
   position: relative;
   display: inline-block;
 }
-
 .content3slide h2::after {
   content: "";
   position: absolute;
@@ -177,11 +321,9 @@ main::before {
   background-color: rgb(215, 223, 105);
   transition: width 0.3s ease;
 }
-
 .div3slide:hover .content3slide h2::after {
   width: 100%;
 }
-
 .content3slide > p {
   font-family: "SVN-Segoe Print", "Quicksand", Arial, sans-serif;
   font-size: 15px;
@@ -190,28 +332,26 @@ main::before {
   margin: 0;
   text-align: justify;
 }
-
 .button3slide {
   position: absolute;
   bottom: 30px;
   right: 30px;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   transition:
     opacity 0.4s ease,
     visibility 0.4s ease;
 }
-
 .div3slide:hover .button3slide {
   opacity: 1;
   visibility: visible;
 }
-
 .button3slide a {
   display: inline-block;
   padding: 12px 30px;
-  background-color: rgb(215, 223, 105);
-  color: #333;
+  background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
+  color: #ffffff;
   font-family: "UTM Aristote", "Times New Roman", serif;
   font-size: 16px;
   font-weight: bold;
@@ -221,14 +361,12 @@ main::before {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
 }
-
 .button3slide a:hover {
-  background-color: rgb(190, 198, 80);
-  color: white;
+  background: linear-gradient(135deg, #21867a 0%, #2a9d8f 100%);
+  color: #f0f0f0;
+  box-shadow: 0 8px 25px rgba(42, 157, 143, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-
 .button3slide a:active {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
